@@ -24,7 +24,7 @@ LAND = 9                          # AUTO control
 OF_LOITER = 10                    # Hold a single location using optical flow
 
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), '../mavlink/pymavlink'))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), '../../../ros_catkin_ws/install_isolated/lib/mavlink/pymavlink'))
 
 # Parse any messages that follow the node command
 from optparse import OptionParser

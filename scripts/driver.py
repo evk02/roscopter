@@ -376,6 +376,19 @@ if opts.enable_waypoint_control:
     rospy.Service("command", roscopter.srv.APMCommand, command_callback)
     rospy.Subscriber("waypoint", roscopter.msg.Waypoint , send_waypoint)
 
+# arming functions copied from https://github.com/cberzan/roscopter/blob/master/nodes/roscopter_node.py
+def set_arm(req):
+    master.arducopter_arm()
+    return []
+
+def set_disarm(req):
+    master.arducopter_disarm()
+    return []
+
+#define service callbacks
+arm_service = rospy.Service('arm',Empty,set_arm)
+disarm_service = rospy.Service('disarm',Empty,set_disarm)
+
 #state
 gps_msg = NavSatFix()
 
